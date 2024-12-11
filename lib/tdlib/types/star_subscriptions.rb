@@ -2,7 +2,7 @@ module TD::Types
   # Represents a list of Telegram Star subscriptions.
   #
   # @attr star_count [Integer] The amount of owned Telegram Stars.
-  # @attr subscriptions [Array<TD::Types::StarSubscription>] List of subbscriptions for Telegram Stars.
+  # @attr subscriptions [Array<TD::Types::StarSubscription>] List of subscriptions for Telegram Stars.
   # @attr required_star_count [Integer] The number of Telegram Stars required to buy to extend subscriptions expiring
   #   soon.
   # @attr next_offset [TD::Types::String] The offset for the next request.

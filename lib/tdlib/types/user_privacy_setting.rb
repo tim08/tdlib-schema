@@ -13,6 +13,7 @@ module TD::Types
       allow_peer_to_peer_calls
       allow_finding_by_phone_number
       allow_private_voice_and_video_note_messages
+      autosave_gifts
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/user_privacy_setting/#{type}"
     end

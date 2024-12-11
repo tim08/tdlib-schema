@@ -59,11 +59,13 @@ module TD::Types
       payment_refunded
       gifted_premium
       premium_gift_code
-      premium_giveaway_created
-      premium_giveaway
-      premium_giveaway_completed
-      premium_giveaway_winners
+      giveaway_created
+      giveaway
+      giveaway_completed
+      giveaway_winners
       gifted_stars
+      giveaway_prize_stars
+      gift
       contact_registered
       users_shared
       chat_shared

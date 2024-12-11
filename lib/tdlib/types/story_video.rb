@@ -9,7 +9,7 @@ module TD::Types
   # @attr is_animation [Boolean] True, if the video has no sound.
   # @attr minithumbnail [TD::Types::Minithumbnail, nil] Video minithumbnail; may be null.
   # @attr thumbnail [TD::Types::Thumbnail, nil] Video thumbnail in JPEG or MPEG4 format; may be null.
-  # @attr preload_prefix_size [Integer] Size of file prefix, which is supposed to be preloaded, in bytes.
+  # @attr preload_prefix_size [Integer] Size of file prefix, which is expected to be preloaded, in bytes.
   # @attr cover_frame_timestamp [Float] Timestamp of the frame used as video thumbnail.
   # @attr video [TD::Types::File] File containing the video.
   class StoryVideo < Base

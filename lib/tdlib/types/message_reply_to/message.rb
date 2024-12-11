@@ -12,9 +12,9 @@ module TD::Types
   # @attr content [TD::Types::MessageContent, nil] Media content of the message if the message was from another chat or
   #   topic; may be null for messages from the same chat and messages without media.
   #   Can be only one of the following types: messageAnimation, messageAudio, messageContact, messageDice,
-  #   messageDocument, messageGame, messageInvoice, messageLocation, messagePaidMedia, messagePhoto, messagePoll,
-  #   messagePremiumGiveaway, messagePremiumGiveawayWinners, messageSticker, messageStory, {TD::Types::MessageContent::Text}
-  #   (for link preview), messageVenue, messageVideo, messageVideoNote, or messageVoiceNote.
+  #   messageDocument, messageGame, messageGiveaway, messageGiveawayWinners, messageInvoice, messageLocation,
+  #   messagePaidMedia, messagePhoto, messagePoll, messageSticker, messageStory, {TD::Types::MessageContent::Text} (for link
+  #   preview), messageVenue, messageVideo, messageVideoNote, or messageVoiceNote.
   class MessageReplyTo::Message < MessageReplyTo
     attribute :chat_id, TD::Types::Coercible::Integer
     attribute :message_id, TD::Types::Coercible::Integer

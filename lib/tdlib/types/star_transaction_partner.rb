@@ -7,9 +7,10 @@ module TD::Types
       google_play
       fragment
       telegram_ads
+      telegram_api
       bot
       business
-      channel
+      chat
       user
       unsupported
     ].each do |type|

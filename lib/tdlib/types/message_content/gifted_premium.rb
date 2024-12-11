@@ -5,6 +5,7 @@ module TD::Types
   #   or is outgoing.
   # @attr receiver_user_id [Integer] The identifier of a user that received Telegram Premium; 0 if the gift is
   #   incoming.
+  # @attr text [TD::Types::FormattedText] Message added to the gifted Telegram Premium by the sender.
   # @attr currency [TD::Types::String] Currency for the paid amount.
   # @attr amount [Integer] The paid amount, in the smallest units of the currency.
   # @attr cryptocurrency [TD::Types::String, nil] Cryptocurrency used to pay for the gift; may be empty if none.
@@ -14,6 +15,7 @@ module TD::Types
   class MessageContent::GiftedPremium < MessageContent
     attribute :gifter_user_id, TD::Types::Coercible::Integer
     attribute :receiver_user_id, TD::Types::Coercible::Integer
+    attribute :text, TD::Types::FormattedText
     attribute :currency, TD::Types::String
     attribute :amount, TD::Types::Coercible::Integer
     attribute :cryptocurrency, TD::Types::String.optional.default(nil)

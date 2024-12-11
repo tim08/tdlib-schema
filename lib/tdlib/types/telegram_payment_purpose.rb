@@ -6,6 +6,7 @@ module TD::Types
       premium_giveaway
       stars
       gifted_stars
+      star_giveaway
       join_chat
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/telegram_payment_purpose/#{type}"

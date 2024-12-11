@@ -8,6 +8,7 @@ module TD::Types
   #   reportChatSponsoredMessage.
   # @attr content [TD::Types::MessageContent] Content of the message.
   #   Currently, can be only of the types messageText, messageAnimation, messagePhoto, or messageVideo.
+  #   Video messages can be viewed fullscreen.
   # @attr sponsor [TD::Types::MessageSponsor] Information about the sponsor of the message.
   # @attr title [TD::Types::String] Title of the sponsored message.
   # @attr button_text [TD::Types::String] Text for the message action button.

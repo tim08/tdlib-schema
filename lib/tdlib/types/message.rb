@@ -12,15 +12,17 @@ module TD::Types
   # @attr is_pinned [Boolean] True, if the message is pinned.
   # @attr is_from_offline [Boolean] True, if the message was sent because of a scheduled action by the message sender,
   #   for example, as away, or greeting service message.
-  # @attr can_be_saved [Boolean] True, if content of the message can be saved locally or copied.
+  # @attr can_be_saved [Boolean] True, if content of the message can be saved locally or copied using
+  #   {TD::Types::InputMessageContent::Forwarded} or forwardMessages with copy options.
   # @attr has_timestamped_media [Boolean] True, if media timestamp entities refers to a media in this message as
   #   opposed to a media in the replied message.
   # @attr is_channel_post [Boolean] True, if the message is a channel post.
   #   All messages to channels are channel posts, all other messages are not channel posts.
   # @attr is_topic_message [Boolean] True, if the message is a forum topic message.
   # @attr contains_unread_mention [Boolean] True, if the message contains an unread mention for the current user.
-  # @attr date [Integer] Point in time (Unix timestamp) when the message was sent.
-  # @attr edit_date [Integer] Point in time (Unix timestamp) when the message was last edited.
+  # @attr date [Integer] Point in time (Unix timestamp) when the message was sent; 0 for scheduled messages.
+  # @attr edit_date [Integer] Point in time (Unix timestamp) when the message was last edited; 0 for scheduled
+  #   messages.
   # @attr forward_info [TD::Types::MessageForwardInfo, nil] Information about the initial message sender; may be null
   #   if none or unknown.
   # @attr import_info [TD::Types::MessageImportInfo, nil] Information about the initial message for messages created

@@ -4,6 +4,7 @@ module TD::Types
     %w[
       paid_media
       invoice_payment
+      subscription
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/bot_transaction_purpose/#{type}"
     end

@@ -14,6 +14,8 @@ module TD::Types
       embedded_animation_player
       embedded_audio_player
       embedded_video_player
+      external_audio
+      external_video
       invoice
       message
       photo

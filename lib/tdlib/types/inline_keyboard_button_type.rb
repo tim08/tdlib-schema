@@ -11,6 +11,7 @@ module TD::Types
       switch_inline
       buy
       user
+      copy_text
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/inline_keyboard_button_type/#{type}"
     end

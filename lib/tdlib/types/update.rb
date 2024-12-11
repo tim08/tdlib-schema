@@ -16,6 +16,7 @@ module TD::Types
       message_unread_reactions
       message_fact_check
       message_live_location_viewed
+      video_published
       new_chat
       chat_title
       chat_photo
@@ -112,7 +113,6 @@ module TD::Types
       language_pack_strings
       connection_state
       terms_of_service
-      users_nearby
       unconfirmed_session
       attachment_menu_bots
       web_app_message_sent
@@ -152,6 +152,7 @@ module TD::Types
       chat_boost
       message_reaction
       message_reactions
+      paid_media_purchased
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/update/#{type}"
     end

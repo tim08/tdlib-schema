@@ -14,6 +14,7 @@ module TD::Types
       member_left
       member_promoted
       member_restricted
+      member_subscription_extended
       available_reactions_changed
       background_changed
       description_changed

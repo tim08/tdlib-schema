@@ -17,6 +17,13 @@ module TD::Types
   #   adding the bot to basic group and supergroup chats; may be null.
   # @attr default_channel_administrator_rights [TD::Types::ChatAdministratorRights, nil] Default administrator rights
   #   for adding the bot to channels; may be null.
+  # @attr web_app_background_light_color [Integer] Default light background color for bot Web Apps; -1 if not
+  #   specified.
+  # @attr web_app_background_dark_color [Integer] Default dark background color for bot Web Apps; -1 if not specified.
+  # @attr web_app_header_light_color [Integer] Default light header color for bot Web Apps; -1 if not specified.
+  # @attr web_app_header_dark_color [Integer] Default dark header color for bot Web Apps; -1 if not specified.
+  # @attr can_get_revenue_statistics [Boolean] True, if the bot's revenue statistics are available to the current user.
+  # @attr can_manage_emoji_status [Boolean] True, if the bot can manage emoji status of the current user.
   # @attr has_media_previews [Boolean] True, if the bot has media previews.
   # @attr edit_commands_link [TD::Types::InternalLinkType, nil] The internal link, which can be used to edit bot
   #   commands; may be null.
@@ -36,6 +43,12 @@ module TD::Types
     attribute :privacy_policy_url, TD::Types::String
     attribute :default_group_administrator_rights, TD::Types::ChatAdministratorRights.optional.default(nil)
     attribute :default_channel_administrator_rights, TD::Types::ChatAdministratorRights.optional.default(nil)
+    attribute :web_app_background_light_color, TD::Types::Coercible::Integer
+    attribute :web_app_background_dark_color, TD::Types::Coercible::Integer
+    attribute :web_app_header_light_color, TD::Types::Coercible::Integer
+    attribute :web_app_header_dark_color, TD::Types::Coercible::Integer
+    attribute :can_get_revenue_statistics, TD::Types::Bool
+    attribute :can_manage_emoji_status, TD::Types::Bool
     attribute :has_media_previews, TD::Types::Bool
     attribute :edit_commands_link, TD::Types::InternalLinkType.optional.default(nil)
     attribute :edit_description_link, TD::Types::InternalLinkType.optional.default(nil)

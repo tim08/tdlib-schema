@@ -11,11 +11,11 @@ module TD::Types
   # @attr bot_username [TD::Types::String] Username of the bot that owns the Web App.
   # @attr web_app_short_name [TD::Types::String] Short name of the Web App.
   # @attr start_parameter [TD::Types::String] Start parameter to be passed to getWebAppLinkUrl.
-  # @attr is_compact [Boolean] True, if the Web App must be opened in the compact mode instead of the full-size mode.
+  # @attr mode [TD::Types::WebAppOpenMode] The mode in which the Web App must be opened.
   class InternalLinkType::WebApp < InternalLinkType
     attribute :bot_username, TD::Types::String
     attribute :web_app_short_name, TD::Types::String
     attribute :start_parameter, TD::Types::String
-    attribute :is_compact, TD::Types::Bool
+    attribute :mode, TD::Types::WebAppOpenMode
   end
 end

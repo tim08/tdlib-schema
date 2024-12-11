@@ -1,12 +1,14 @@
 module TD::Types
   # Contains properties of a message and describes actions that can be done with the message right now.
   #
+  # @attr can_be_copied_to_secret_chat [Boolean] True, if content of the message can be copied to a secret chat using
+  #   {TD::Types::InputMessageContent::Forwarded} or forwardMessages with copy options.
   # @attr can_be_deleted_only_for_self [Boolean] True, if the message can be deleted only for the current user while
   #   other users will continue to see it using the method deleteMessages with revoke == false.
   # @attr can_be_deleted_for_all_users [Boolean] True, if the message can be deleted for all users using the method
   #   deleteMessages with revoke == true.
   # @attr can_be_edited [Boolean] True, if the message can be edited using the methods editMessageText,
-  #   editMessageMedia, editMessageCaption, or editMessageReplyMarkup.
+  #   editMessageCaption, or editMessageReplyMarkup.
   #   For live location and poll messages this fields shows whether editMessageLiveLocation or stopPoll can be used
   #   with this message.
   # @attr can_be_forwarded [Boolean] True, if the message can be forwarded using
@@ -22,6 +24,7 @@ module TD::Types
   #   {TD::Types::InputMessageContent::Forwarded} or forwardMessages with copy options.
   # @attr can_be_shared_in_story [Boolean] True, if the message can be shared in a story using
   #   inputStoryAreaTypeMessage.
+  # @attr can_edit_media [Boolean] True, if the message can be edited using the method editMessageMedia.
   # @attr can_edit_scheduling_state [Boolean] True, if scheduling state of the message can be edited.
   # @attr can_get_embedding_code [Boolean] True, if code for message embedding can be received using
   #   getMessageEmbeddingCode.
@@ -44,6 +47,7 @@ module TD::Types
   # @attr need_show_statistics [Boolean] True, if message statistics must be available from context menu of the
   #   message.
   class MessageProperties < Base
+    attribute :can_be_copied_to_secret_chat, TD::Types::Bool
     attribute :can_be_deleted_only_for_self, TD::Types::Bool
     attribute :can_be_deleted_for_all_users, TD::Types::Bool
     attribute :can_be_edited, TD::Types::Bool
@@ -54,6 +58,7 @@ module TD::Types
     attribute :can_be_replied_in_another_chat, TD::Types::Bool
     attribute :can_be_saved, TD::Types::Bool
     attribute :can_be_shared_in_story, TD::Types::Bool
+    attribute :can_edit_media, TD::Types::Bool
     attribute :can_edit_scheduling_state, TD::Types::Bool
     attribute :can_get_embedding_code, TD::Types::Bool
     attribute :can_get_link, TD::Types::Bool

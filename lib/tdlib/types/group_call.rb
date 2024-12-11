@@ -3,7 +3,7 @@ module TD::Types
   #
   # @attr id [Integer] Group call identifier.
   # @attr title [TD::Types::String] Group call title.
-  # @attr scheduled_start_date [Integer] Point in time (Unix timestamp) when the group call is supposed to be started
+  # @attr scheduled_start_date [Integer] Point in time (Unix timestamp) when the group call is expected to be started
   #   by an administrator; 0 if it is already active or was ended.
   # @attr enabled_start_notification [Boolean] True, if the group call is scheduled and the current user will receive a
   #   notification when the group call starts.

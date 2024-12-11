@@ -88,6 +88,7 @@ module TD::Types
       'stickerFullTypeMask'                                     => 'StickerFullType::Mask',
       'stickerFullTypeCustomEmoji'                              => 'StickerFullType::CustomEmoji',
       'closedVectorPath'                                        => 'ClosedVectorPath',
+      'outline'                                                 => 'Outline',
       'pollOption'                                              => 'PollOption',
       'PollType'                                                => 'PollType',
       'pollTypeRegular'                                         => 'PollType::Regular',
@@ -107,6 +108,7 @@ module TD::Types
       'game'                                                    => 'Game',
       'webApp'                                                  => 'WebApp',
       'poll'                                                    => 'Poll',
+      'alternativeVideo'                                        => 'AlternativeVideo',
       'background'                                              => 'Background',
       'backgrounds'                                             => 'Backgrounds',
       'chatBackground'                                          => 'ChatBackground',
@@ -155,6 +157,9 @@ module TD::Types
       'inputChatPhotoSticker'                                   => 'InputChatPhoto::Sticker',
       'chatPermissions'                                         => 'ChatPermissions',
       'chatAdministratorRights'                                 => 'ChatAdministratorRights',
+      'StarSubscriptionType'                                    => 'StarSubscriptionType',
+      'starSubscriptionTypeChannel'                             => 'StarSubscriptionType::Channel',
+      'starSubscriptionTypeBot'                                 => 'StarSubscriptionType::Bot',
       'starSubscriptionPricing'                                 => 'StarSubscriptionPricing',
       'starSubscription'                                        => 'StarSubscription',
       'starSubscriptions'                                       => 'StarSubscriptions',
@@ -166,38 +171,55 @@ module TD::Types
       'premiumGiftCodeInfo'                                     => 'PremiumGiftCodeInfo',
       'starPaymentOption'                                       => 'StarPaymentOption',
       'starPaymentOptions'                                      => 'StarPaymentOptions',
+      'starGiveawayWinnerOption'                                => 'StarGiveawayWinnerOption',
+      'starGiveawayPaymentOption'                               => 'StarGiveawayPaymentOption',
+      'starGiveawayPaymentOptions'                              => 'StarGiveawayPaymentOptions',
+      'gift'                                                    => 'Gift',
+      'gifts'                                                   => 'Gifts',
+      'userGift'                                                => 'UserGift',
+      'userGifts'                                               => 'UserGifts',
       'StarTransactionDirection'                                => 'StarTransactionDirection',
       'starTransactionDirectionIncoming'                        => 'StarTransactionDirection::Incoming',
       'starTransactionDirectionOutgoing'                        => 'StarTransactionDirection::Outgoing',
       'BotTransactionPurpose'                                   => 'BotTransactionPurpose',
       'botTransactionPurposePaidMedia'                          => 'BotTransactionPurpose::PaidMedia',
       'botTransactionPurposeInvoicePayment'                     => 'BotTransactionPurpose::InvoicePayment',
-      'ChannelTransactionPurpose'                               => 'ChannelTransactionPurpose',
-      'channelTransactionPurposePaidMedia'                      => 'ChannelTransactionPurpose::PaidMedia',
-      'channelTransactionPurposeJoin'                           => 'ChannelTransactionPurpose::Join',
-      'channelTransactionPurposeReaction'                       => 'ChannelTransactionPurpose::Reaction',
+      'botTransactionPurposeSubscription'                       => 'BotTransactionPurpose::Subscription',
+      'ChatTransactionPurpose'                                  => 'ChatTransactionPurpose',
+      'chatTransactionPurposePaidMedia'                         => 'ChatTransactionPurpose::PaidMedia',
+      'chatTransactionPurposeJoin'                              => 'ChatTransactionPurpose::Join',
+      'chatTransactionPurposeReaction'                          => 'ChatTransactionPurpose::Reaction',
+      'chatTransactionPurposeGiveaway'                          => 'ChatTransactionPurpose::Giveaway',
+      'UserTransactionPurpose'                                  => 'UserTransactionPurpose',
+      'userTransactionPurposeGiftedStars'                       => 'UserTransactionPurpose::GiftedStars',
+      'userTransactionPurposeGiftSell'                          => 'UserTransactionPurpose::GiftSell',
+      'userTransactionPurposeGiftSend'                          => 'UserTransactionPurpose::GiftSend',
       'StarTransactionPartner'                                  => 'StarTransactionPartner',
       'starTransactionPartnerTelegram'                          => 'StarTransactionPartner::Telegram',
       'starTransactionPartnerAppStore'                          => 'StarTransactionPartner::AppStore',
       'starTransactionPartnerGooglePlay'                        => 'StarTransactionPartner::GooglePlay',
       'starTransactionPartnerFragment'                          => 'StarTransactionPartner::Fragment',
       'starTransactionPartnerTelegramAds'                       => 'StarTransactionPartner::TelegramAds',
+      'starTransactionPartnerTelegramApi'                       => 'StarTransactionPartner::TelegramApi',
       'starTransactionPartnerBot'                               => 'StarTransactionPartner::Bot',
       'starTransactionPartnerBusiness'                          => 'StarTransactionPartner::Business',
-      'starTransactionPartnerChannel'                           => 'StarTransactionPartner::Channel',
+      'starTransactionPartnerChat'                              => 'StarTransactionPartner::Chat',
       'starTransactionPartnerUser'                              => 'StarTransactionPartner::User',
       'starTransactionPartnerUnsupported'                       => 'StarTransactionPartner::Unsupported',
       'starTransaction'                                         => 'StarTransaction',
       'starTransactions'                                        => 'StarTransactions',
-      'PremiumGiveawayParticipantStatus'                        => 'PremiumGiveawayParticipantStatus',
-      'premiumGiveawayParticipantStatusEligible'                => 'PremiumGiveawayParticipantStatus::Eligible',
-      'premiumGiveawayParticipantStatusParticipating'           => 'PremiumGiveawayParticipantStatus::Participating',
-      'premiumGiveawayParticipantStatusAlreadyWasMember'        => 'PremiumGiveawayParticipantStatus::AlreadyWasMember',
-      'premiumGiveawayParticipantStatusAdministrator'           => 'PremiumGiveawayParticipantStatus::Administrator',
-      'premiumGiveawayParticipantStatusDisallowedCountry'       => 'PremiumGiveawayParticipantStatus::DisallowedCountry',
-      'PremiumGiveawayInfo'                                     => 'PremiumGiveawayInfo',
-      'premiumGiveawayInfoOngoing'                              => 'PremiumGiveawayInfo::Ongoing',
-      'premiumGiveawayInfoCompleted'                            => 'PremiumGiveawayInfo::Completed',
+      'GiveawayParticipantStatus'                               => 'GiveawayParticipantStatus',
+      'giveawayParticipantStatusEligible'                       => 'GiveawayParticipantStatus::Eligible',
+      'giveawayParticipantStatusParticipating'                  => 'GiveawayParticipantStatus::Participating',
+      'giveawayParticipantStatusAlreadyWasMember'               => 'GiveawayParticipantStatus::AlreadyWasMember',
+      'giveawayParticipantStatusAdministrator'                  => 'GiveawayParticipantStatus::Administrator',
+      'giveawayParticipantStatusDisallowedCountry'              => 'GiveawayParticipantStatus::DisallowedCountry',
+      'GiveawayInfo'                                            => 'GiveawayInfo',
+      'giveawayInfoOngoing'                                     => 'GiveawayInfo::Ongoing',
+      'giveawayInfoCompleted'                                   => 'GiveawayInfo::Completed',
+      'GiveawayPrize'                                           => 'GiveawayPrize',
+      'giveawayPrizePremium'                                    => 'GiveawayPrize::Premium',
+      'giveawayPrizeStars'                                      => 'GiveawayPrize::Stars',
       'accentColor'                                             => 'AccentColor',
       'profileAccentColors'                                     => 'ProfileAccentColors',
       'profileAccentColor'                                      => 'ProfileAccentColor',
@@ -334,7 +356,7 @@ module TD::Types
       'messageSponsor'                                          => 'MessageSponsor',
       'sponsoredMessage'                                        => 'SponsoredMessage',
       'sponsoredMessages'                                       => 'SponsoredMessages',
-      'reportChatSponsoredMessageOption'                        => 'ReportChatSponsoredMessageOption',
+      'reportOption'                                            => 'ReportOption',
       'ReportChatSponsoredMessageResult'                        => 'ReportChatSponsoredMessageResult',
       'reportChatSponsoredMessageResultOk'                      => 'ReportChatSponsoredMessageResult::Ok',
       'reportChatSponsoredMessageResultFailed'                  => 'ReportChatSponsoredMessageResult::Failed',
@@ -391,14 +413,11 @@ module TD::Types
       'failedToAddMember'                                       => 'FailedToAddMember',
       'failedToAddMembers'                                      => 'FailedToAddMembers',
       'createdBasicGroupChat'                                   => 'CreatedBasicGroupChat',
-      'chatNearby'                                              => 'ChatNearby',
-      'chatsNearby'                                             => 'ChatsNearby',
       'PublicChatType'                                          => 'PublicChatType',
       'publicChatTypeHasUsername'                               => 'PublicChatType::HasUsername',
       'publicChatTypeIsLocationBased'                           => 'PublicChatType::IsLocationBased',
       'ChatActionBar'                                           => 'ChatActionBar',
       'chatActionBarReportSpam'                                 => 'ChatActionBar::ReportSpam',
-      'chatActionBarReportUnrelatedLocation'                    => 'ChatActionBar::ReportUnrelatedLocation',
       'chatActionBarInviteMembers'                              => 'ChatActionBar::InviteMembers',
       'chatActionBarReportAddBlock'                             => 'ChatActionBar::ReportAddBlock',
       'chatActionBarAddContact'                                 => 'ChatActionBar::AddContact',
@@ -423,6 +442,7 @@ module TD::Types
       'inlineKeyboardButtonTypeSwitchInline'                    => 'InlineKeyboardButtonType::SwitchInline',
       'inlineKeyboardButtonTypeBuy'                             => 'InlineKeyboardButtonType::Buy',
       'inlineKeyboardButtonTypeUser'                            => 'InlineKeyboardButtonType::User',
+      'inlineKeyboardButtonTypeCopyText'                        => 'InlineKeyboardButtonType::CopyText',
       'inlineKeyboardButton'                                    => 'InlineKeyboardButton',
       'ReplyMarkup'                                             => 'ReplyMarkup',
       'replyMarkupRemoveKeyboard'                               => 'ReplyMarkup::RemoveKeyboard',
@@ -432,9 +452,15 @@ module TD::Types
       'LoginUrlInfo'                                            => 'LoginUrlInfo',
       'loginUrlInfoOpen'                                        => 'LoginUrlInfo::Open',
       'loginUrlInfoRequestConfirmation'                         => 'LoginUrlInfo::RequestConfirmation',
+      'themeParameters'                                         => 'ThemeParameters',
+      'WebAppOpenMode'                                          => 'WebAppOpenMode',
+      'webAppOpenModeCompact'                                   => 'WebAppOpenMode::Compact',
+      'webAppOpenModeFullSize'                                  => 'WebAppOpenMode::FullSize',
+      'webAppOpenModeFullScreen'                                => 'WebAppOpenMode::FullScreen',
       'foundWebApp'                                             => 'FoundWebApp',
       'webAppInfo'                                              => 'WebAppInfo',
       'mainWebApp'                                              => 'MainWebApp',
+      'webAppOpenParameters'                                    => 'WebAppOpenParameters',
       'messageThreadInfo'                                       => 'MessageThreadInfo',
       'SavedMessagesTopicType'                                  => 'SavedMessagesTopicType',
       'savedMessagesTopicTypeMyNotes'                           => 'SavedMessagesTopicType::MyNotes',
@@ -526,6 +552,8 @@ module TD::Types
       'linkPreviewTypeEmbeddedAnimationPlayer'                  => 'LinkPreviewType::EmbeddedAnimationPlayer',
       'linkPreviewTypeEmbeddedAudioPlayer'                      => 'LinkPreviewType::EmbeddedAudioPlayer',
       'linkPreviewTypeEmbeddedVideoPlayer'                      => 'LinkPreviewType::EmbeddedVideoPlayer',
+      'linkPreviewTypeExternalAudio'                            => 'LinkPreviewType::ExternalAudio',
+      'linkPreviewTypeExternalVideo'                            => 'LinkPreviewType::ExternalVideo',
       'linkPreviewTypeInvoice'                                  => 'LinkPreviewType::Invoice',
       'linkPreviewTypeMessage'                                  => 'LinkPreviewType::Message',
       'linkPreviewTypePhoto'                                    => 'LinkPreviewType::Photo',
@@ -555,7 +583,6 @@ module TD::Types
       'bankCardInfo'                                            => 'BankCardInfo',
       'address'                                                 => 'Address',
       'locationAddress'                                         => 'LocationAddress',
-      'themeParameters'                                         => 'ThemeParameters',
       'labeledPricePart'                                        => 'LabeledPricePart',
       'invoice'                                                 => 'Invoice',
       'orderInfo'                                               => 'OrderInfo',
@@ -574,6 +601,7 @@ module TD::Types
       'PaymentFormType'                                         => 'PaymentFormType',
       'paymentFormTypeRegular'                                  => 'PaymentFormType::Regular',
       'paymentFormTypeStars'                                    => 'PaymentFormType::Stars',
+      'paymentFormTypeStarSubscription'                         => 'PaymentFormType::StarSubscription',
       'paymentForm'                                             => 'PaymentForm',
       'validatedOrderInfo'                                      => 'ValidatedOrderInfo',
       'paymentResult'                                           => 'PaymentResult',
@@ -590,7 +618,7 @@ module TD::Types
       'paidMediaPhoto'                                          => 'PaidMedia::Photo',
       'paidMediaVideo'                                          => 'PaidMedia::Video',
       'paidMediaUnsupported'                                    => 'PaidMedia::Unsupported',
-      'premiumGiveawayParameters'                               => 'PremiumGiveawayParameters',
+      'giveawayParameters'                                      => 'GiveawayParameters',
       'datedFile'                                               => 'DatedFile',
       'PassportElementType'                                     => 'PassportElementType',
       'passportElementTypePersonalDetails'                      => 'PassportElementType::PersonalDetails',
@@ -727,11 +755,13 @@ module TD::Types
       'messagePaymentRefunded'                                  => 'MessageContent::PaymentRefunded',
       'messageGiftedPremium'                                    => 'MessageContent::GiftedPremium',
       'messagePremiumGiftCode'                                  => 'MessageContent::PremiumGiftCode',
-      'messagePremiumGiveawayCreated'                           => 'MessageContent::PremiumGiveawayCreated',
-      'messagePremiumGiveaway'                                  => 'MessageContent::PremiumGiveaway',
-      'messagePremiumGiveawayCompleted'                         => 'MessageContent::PremiumGiveawayCompleted',
-      'messagePremiumGiveawayWinners'                           => 'MessageContent::PremiumGiveawayWinners',
+      'messageGiveawayCreated'                                  => 'MessageContent::GiveawayCreated',
+      'messageGiveaway'                                         => 'MessageContent::Giveaway',
+      'messageGiveawayCompleted'                                => 'MessageContent::GiveawayCompleted',
+      'messageGiveawayWinners'                                  => 'MessageContent::GiveawayWinners',
       'messageGiftedStars'                                      => 'MessageContent::GiftedStars',
+      'messageGiveawayPrizeStars'                               => 'MessageContent::GiveawayPrizeStars',
+      'messageGift'                                             => 'MessageContent::Gift',
       'messageContactRegistered'                                => 'MessageContent::ContactRegistered',
       'messageUsersShared'                                      => 'MessageContent::UsersShared',
       'messageChatShared'                                       => 'MessageContent::ChatShared',
@@ -773,6 +803,7 @@ module TD::Types
       'MessageSchedulingState'                                  => 'MessageSchedulingState',
       'messageSchedulingStateSendAtDate'                        => 'MessageSchedulingState::SendAtDate',
       'messageSchedulingStateSendWhenOnline'                    => 'MessageSchedulingState::SendWhenOnline',
+      'messageSchedulingStateSendWhenVideoProcessed'            => 'MessageSchedulingState::SendWhenVideoProcessed',
       'MessageSelfDestructType'                                 => 'MessageSelfDestructType',
       'messageSelfDestructTypeTimer'                            => 'MessageSelfDestructType::Timer',
       'messageSelfDestructTypeImmediately'                      => 'MessageSelfDestructType::Immediately',
@@ -922,7 +953,7 @@ module TD::Types
       'chatBoostSourceGiftCode'                                 => 'ChatBoostSource::GiftCode',
       'chatBoostSourceGiveaway'                                 => 'ChatBoostSource::Giveaway',
       'chatBoostSourcePremium'                                  => 'ChatBoostSource::Premium',
-      'prepaidPremiumGiveaway'                                  => 'PrepaidPremiumGiveaway',
+      'prepaidGiveaway'                                         => 'PrepaidGiveaway',
       'chatBoostStatus'                                         => 'ChatBoostStatus',
       'chatBoost'                                               => 'ChatBoost',
       'foundChatBoosts'                                         => 'FoundChatBoosts',
@@ -1006,6 +1037,11 @@ module TD::Types
       'botWriteAccessAllowReasonAcceptedRequest'                => 'BotWriteAccessAllowReason::AcceptedRequest',
       'httpUrl'                                                 => 'HttpUrl',
       'userLink'                                                => 'UserLink',
+      'targetChatTypes'                                         => 'TargetChatTypes',
+      'TargetChat'                                              => 'TargetChat',
+      'targetChatCurrent'                                       => 'TargetChat::Current',
+      'targetChatChosen'                                        => 'TargetChat::Chosen',
+      'targetChatInternalLink'                                  => 'TargetChat::InternalLink',
       'InputInlineQueryResult'                                  => 'InputInlineQueryResult',
       'inputInlineQueryResultAnimation'                         => 'InputInlineQueryResult::Animation',
       'inputInlineQueryResultArticle'                           => 'InputInlineQueryResult::Article',
@@ -1037,6 +1073,8 @@ module TD::Types
       'inlineQueryResultsButtonTypeWebApp'                      => 'InlineQueryResultsButtonType::WebApp',
       'inlineQueryResultsButton'                                => 'InlineQueryResultsButton',
       'inlineQueryResults'                                      => 'InlineQueryResults',
+      'preparedInlineMessageId'                                 => 'PreparedInlineMessageId',
+      'preparedInlineMessage'                                   => 'PreparedInlineMessage',
       'CallbackQueryPayload'                                    => 'CallbackQueryPayload',
       'callbackQueryPayloadData'                                => 'CallbackQueryPayload::Data',
       'callbackQueryPayloadDataWithPassword'                    => 'CallbackQueryPayload::DataWithPassword',
@@ -1058,6 +1096,7 @@ module TD::Types
       'chatEventMemberLeft'                                     => 'ChatEventAction::MemberLeft',
       'chatEventMemberPromoted'                                 => 'ChatEventAction::MemberPromoted',
       'chatEventMemberRestricted'                               => 'ChatEventAction::MemberRestricted',
+      'chatEventMemberSubscriptionExtended'                     => 'ChatEventAction::MemberSubscriptionExtended',
       'chatEventAvailableReactionsChanged'                      => 'ChatEventAction::AvailableReactionsChanged',
       'chatEventBackgroundChanged'                              => 'ChatEventAction::BackgroundChanged',
       'chatEventDescriptionChanged'                             => 'ChatEventAction::DescriptionChanged',
@@ -1187,9 +1226,9 @@ module TD::Types
       'premiumState'                                            => 'PremiumState',
       'StorePaymentPurpose'                                     => 'StorePaymentPurpose',
       'storePaymentPurposePremiumSubscription'                  => 'StorePaymentPurpose::PremiumSubscription',
-      'storePaymentPurposeGiftedPremium'                        => 'StorePaymentPurpose::GiftedPremium',
       'storePaymentPurposePremiumGiftCodes'                     => 'StorePaymentPurpose::PremiumGiftCodes',
       'storePaymentPurposePremiumGiveaway'                      => 'StorePaymentPurpose::PremiumGiveaway',
+      'storePaymentPurposeStarGiveaway'                         => 'StorePaymentPurpose::StarGiveaway',
       'storePaymentPurposeStars'                                => 'StorePaymentPurpose::Stars',
       'storePaymentPurposeGiftedStars'                          => 'StorePaymentPurpose::GiftedStars',
       'TelegramPaymentPurpose'                                  => 'TelegramPaymentPurpose',
@@ -1197,6 +1236,7 @@ module TD::Types
       'telegramPaymentPurposePremiumGiveaway'                   => 'TelegramPaymentPurpose::PremiumGiveaway',
       'telegramPaymentPurposeStars'                             => 'TelegramPaymentPurpose::Stars',
       'telegramPaymentPurposeGiftedStars'                       => 'TelegramPaymentPurpose::GiftedStars',
+      'telegramPaymentPurposeStarGiveaway'                      => 'TelegramPaymentPurpose::StarGiveaway',
       'telegramPaymentPurposeJoinChat'                          => 'TelegramPaymentPurpose::JoinChat',
       'DeviceToken'                                             => 'DeviceToken',
       'deviceTokenFirebaseCloudMessaging'                       => 'DeviceToken::FirebaseCloudMessaging',
@@ -1275,7 +1315,8 @@ module TD::Types
       'pushMessageContentPhoto'                                 => 'PushMessageContent::Photo',
       'pushMessageContentPoll'                                  => 'PushMessageContent::Poll',
       'pushMessageContentPremiumGiftCode'                       => 'PushMessageContent::PremiumGiftCode',
-      'pushMessageContentPremiumGiveaway'                       => 'PushMessageContent::PremiumGiveaway',
+      'pushMessageContentGiveaway'                              => 'PushMessageContent::Giveaway',
+      'pushMessageContentGift'                                  => 'PushMessageContent::Gift',
       'pushMessageContentScreenshotTaken'                       => 'PushMessageContent::ScreenshotTaken',
       'pushMessageContentSticker'                               => 'PushMessageContent::Sticker',
       'pushMessageContentStory'                                 => 'PushMessageContent::Story',
@@ -1331,11 +1372,13 @@ module TD::Types
       'UserPrivacySettingRule'                                  => 'UserPrivacySettingRule',
       'userPrivacySettingRuleAllowAll'                          => 'UserPrivacySettingRule::AllowAll',
       'userPrivacySettingRuleAllowContacts'                     => 'UserPrivacySettingRule::AllowContacts',
+      'userPrivacySettingRuleAllowBots'                         => 'UserPrivacySettingRule::AllowBots',
       'userPrivacySettingRuleAllowPremiumUsers'                 => 'UserPrivacySettingRule::AllowPremiumUsers',
       'userPrivacySettingRuleAllowUsers'                        => 'UserPrivacySettingRule::AllowUsers',
       'userPrivacySettingRuleAllowChatMembers'                  => 'UserPrivacySettingRule::AllowChatMembers',
       'userPrivacySettingRuleRestrictAll'                       => 'UserPrivacySettingRule::RestrictAll',
       'userPrivacySettingRuleRestrictContacts'                  => 'UserPrivacySettingRule::RestrictContacts',
+      'userPrivacySettingRuleRestrictBots'                      => 'UserPrivacySettingRule::RestrictBots',
       'userPrivacySettingRuleRestrictUsers'                     => 'UserPrivacySettingRule::RestrictUsers',
       'userPrivacySettingRuleRestrictChatMembers'               => 'UserPrivacySettingRule::RestrictChatMembers',
       'userPrivacySettingRules'                                 => 'UserPrivacySettingRules',
@@ -1351,6 +1394,7 @@ module TD::Types
       'userPrivacySettingAllowPeerToPeerCalls'                  => 'UserPrivacySetting::AllowPeerToPeerCalls',
       'userPrivacySettingAllowFindingByPhoneNumber'             => 'UserPrivacySetting::AllowFindingByPhoneNumber',
       'userPrivacySettingAllowPrivateVoiceAndVideoNoteMessages' => 'UserPrivacySetting::AllowPrivateVoiceAndVideoNoteMessages',
+      'userPrivacySettingAutosaveGifts'                         => 'UserPrivacySetting::AutosaveGifts',
       'readDatePrivacySettings'                                 => 'ReadDatePrivacySettings',
       'newChatPrivacySettings'                                  => 'NewChatPrivacySettings',
       'CanSendMessageToUserResult'                              => 'CanSendMessageToUserResult',
@@ -1393,10 +1437,15 @@ module TD::Types
       'reportReasonIllegalDrugs'                                => 'ReportReason::IllegalDrugs',
       'reportReasonPersonalDetails'                             => 'ReportReason::PersonalDetails',
       'reportReasonCustom'                                      => 'ReportReason::Custom',
-      'TargetChat'                                              => 'TargetChat',
-      'targetChatCurrent'                                       => 'TargetChat::Current',
-      'targetChatChosen'                                        => 'TargetChat::Chosen',
-      'targetChatInternalLink'                                  => 'TargetChat::InternalLink',
+      'ReportChatResult'                                        => 'ReportChatResult',
+      'reportChatResultOk'                                      => 'ReportChatResult::Ok',
+      'reportChatResultOptionRequired'                          => 'ReportChatResult::OptionRequired',
+      'reportChatResultTextRequired'                            => 'ReportChatResult::TextRequired',
+      'reportChatResultMessagesRequired'                        => 'ReportChatResult::MessagesRequired',
+      'ReportStoryResult'                                       => 'ReportStoryResult',
+      'reportStoryResultOk'                                     => 'ReportStoryResult::Ok',
+      'reportStoryResultOptionRequired'                         => 'ReportStoryResult::OptionRequired',
+      'reportStoryResultTextRequired'                           => 'ReportStoryResult::TextRequired',
       'InternalLinkType'                                        => 'InternalLinkType',
       'internalLinkTypeActiveSessions'                          => 'InternalLinkType::ActiveSessions',
       'internalLinkTypeAttachmentMenuBot'                       => 'InternalLinkType::AttachmentMenuBot',
@@ -1612,6 +1661,7 @@ module TD::Types
       'updateMessageUnreadReactions'                            => 'Update::MessageUnreadReactions',
       'updateMessageFactCheck'                                  => 'Update::MessageFactCheck',
       'updateMessageLiveLocationViewed'                         => 'Update::MessageLiveLocationViewed',
+      'updateVideoPublished'                                    => 'Update::VideoPublished',
       'updateNewChat'                                           => 'Update::NewChat',
       'updateChatTitle'                                         => 'Update::ChatTitle',
       'updateChatPhoto'                                         => 'Update::ChatPhoto',
@@ -1708,7 +1758,6 @@ module TD::Types
       'updateLanguagePackStrings'                               => 'Update::LanguagePackStrings',
       'updateConnectionState'                                   => 'Update::ConnectionState',
       'updateTermsOfService'                                    => 'Update::TermsOfService',
-      'updateUsersNearby'                                       => 'Update::UsersNearby',
       'updateUnconfirmedSession'                                => 'Update::UnconfirmedSession',
       'updateAttachmentMenuBots'                                => 'Update::AttachmentMenuBots',
       'updateWebAppMessageSent'                                 => 'Update::WebAppMessageSent',
@@ -1748,6 +1797,7 @@ module TD::Types
       'updateChatBoost'                                         => 'Update::ChatBoost',
       'updateMessageReaction'                                   => 'Update::MessageReaction',
       'updateMessageReactions'                                  => 'Update::MessageReactions',
+      'updatePaidMediaPurchased'                                => 'Update::PaidMediaPurchased',
       'updates'                                                 => 'Updates',
       'LogStream'                                               => 'LogStream',
       'logStreamDefault'                                        => 'LogStream::Default',
@@ -1799,6 +1849,7 @@ module TD::Types
     added_reaction
     added_reactions
     address
+    alternative_video
     animated_chat_photo
     animated_emoji
     animation
@@ -1871,7 +1922,6 @@ module TD::Types
     can_send_message_to_user_result
     can_send_story_result
     can_transfer_ownership_result
-    channel_transaction_purpose
     chat
     chat_action
     chat_action_bar
@@ -1920,7 +1970,6 @@ module TD::Types
     chat_members_filter
     chat_message_sender
     chat_message_senders
-    chat_nearby
     chat_notification_settings
     chat_permissions
     chat_photo
@@ -1942,9 +1991,9 @@ module TD::Types
     chat_statistics_message_sender_info
     chat_statistics_object_type
     chat_theme
+    chat_transaction_purpose
     chat_type
     chats
-    chats_nearby
     check_chat_username_result
     check_sticker_set_name_result
     close_birthday_user
@@ -2015,6 +2064,12 @@ module TD::Types
     game
     game_high_score
     game_high_scores
+    gift
+    gifts
+    giveaway_info
+    giveaway_parameters
+    giveaway_participant_status
+    giveaway_prize
     group_call
     group_call_id
     group_call_participant
@@ -2136,6 +2191,7 @@ module TD::Types
     ok
     option_value
     order_info
+    outline
     page_block
     page_block_caption
     page_block_horizontal_alignment
@@ -2179,9 +2235,6 @@ module TD::Types
     premium_gift_code_info
     premium_gift_code_payment_option
     premium_gift_code_payment_options
-    premium_giveaway_info
-    premium_giveaway_parameters
-    premium_giveaway_participant_status
     premium_limit
     premium_limit_type
     premium_payment_option
@@ -2189,7 +2242,9 @@ module TD::Types
     premium_state
     premium_state_payment_option
     premium_story_feature
-    prepaid_premium_giveaway
+    prepaid_giveaway
+    prepared_inline_message
+    prepared_inline_message_id
     product_info
     profile_accent_color
     profile_accent_colors
@@ -2215,9 +2270,11 @@ module TD::Types
     recovery_email_address
     remote_file
     reply_markup
-    report_chat_sponsored_message_option
+    report_chat_result
     report_chat_sponsored_message_result
+    report_option
     report_reason
+    report_story_result
     resend_code_reason
     reset_password_result
     revenue_withdrawal_state
@@ -2244,12 +2301,16 @@ module TD::Types
     speech_recognition_result
     sponsored_message
     sponsored_messages
+    star_giveaway_payment_option
+    star_giveaway_payment_options
+    star_giveaway_winner_option
     star_payment_option
     star_payment_options
     star_revenue_statistics
     star_revenue_status
     star_subscription
     star_subscription_pricing
+    star_subscription_type
     star_subscriptions
     star_transaction
     star_transaction_direction
@@ -2296,6 +2357,7 @@ module TD::Types
     t_me_url_type
     t_me_urls
     target_chat
+    target_chat_types
     telegram_payment_purpose
     temporary_password_state
     terms_of_service
@@ -2319,12 +2381,15 @@ module TD::Types
     updates
     user
     user_full_info
+    user_gift
+    user_gifts
     user_link
     user_privacy_setting
     user_privacy_setting_rule
     user_privacy_setting_rules
     user_status
     user_support_info
+    user_transaction_purpose
     user_type
     usernames
     users
@@ -2337,6 +2402,8 @@ module TD::Types
     voice_note
     web_app
     web_app_info
+    web_app_open_mode
+    web_app_open_parameters
     web_page_instant_view
   ].each do |type|
     autoload camelize(type), "tdlib/types/#{type}"

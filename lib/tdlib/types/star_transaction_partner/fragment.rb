@@ -2,7 +2,7 @@ module TD::Types
   # The transaction is a transaction with Fragment.
   #
   # @attr withdrawal_state [TD::Types::RevenueWithdrawalState, nil] State of the withdrawal; may be null for refunds
-  #   from Fragment.
+  #   from Fragment or for Telegram Stars bought on Fragment.
   class StarTransactionPartner::Fragment < StarTransactionPartner
     attribute :withdrawal_state, TD::Types::RevenueWithdrawalState.optional.default(nil)
   end

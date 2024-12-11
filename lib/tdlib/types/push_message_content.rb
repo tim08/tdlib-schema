@@ -16,7 +16,8 @@ module TD::Types
       photo
       poll
       premium_gift_code
-      premium_giveaway
+      giveaway
+      gift
       screenshot_taken
       sticker
       story

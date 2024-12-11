@@ -2,12 +2,13 @@ module TD::Types
   # A video message.
   #
   # @attr video [TD::Types::InputFile] Video to be sent.
+  #   The video is expected to be re-encoded to MPEG4 format with H.264 codec by the sender.
   # @attr thumbnail [TD::Types::InputThumbnail] Video thumbnail; pass null to skip thumbnail uploading.
   # @attr added_sticker_file_ids [Array<Integer>] File identifiers of the stickers added to the video, if applicable.
   # @attr duration [Integer] Duration of the video, in seconds.
   # @attr width [Integer] Video width.
   # @attr height [Integer] Video height.
-  # @attr supports_streaming [Boolean] True, if the video is supposed to be streamed.
+  # @attr supports_streaming [Boolean] True, if the video is expected to be streamed.
   # @attr caption [TD::Types::FormattedText] Video caption; pass null to use an empty caption;
   #   0-getOption("message_caption_length_max") characters.
   # @attr show_caption_above_media [Boolean] True, if the caption must be shown above the video; otherwise, the caption
